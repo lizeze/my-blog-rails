@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root "index#index"
   get '/archive',action: :index,controller: 'archive'
   get '/about',action: :index ,controller:'about'
+  get '/post',action: :index,controller:'post'
   
   resources :tag
   

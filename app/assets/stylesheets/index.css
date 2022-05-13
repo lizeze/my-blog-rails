@@ -1,0 +1,16 @@
+.index {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.index .aractiles h2 {
+ 
+  font-size: 22px;
+  color: #3e3b3f;
+  position: relative;
+  box-shadow: 0 0 1px transparent;
+}
+
+.index .aractiles .title {
+  font-size: 12px;
+}

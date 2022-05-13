@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "index#index"
-  get '/archive',action: :archive,controller: 'index'
+  get '/archive',action: :index,controller: 'archive'
+  get '/about',action: :index ,controller:'about'
+  
   resources :tag
   
 end

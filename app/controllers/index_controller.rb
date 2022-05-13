@@ -5,8 +5,6 @@ class IndexController < ApplicationController
 
     end
 
-     def archive
-       render :template=>'archive' 
-     end
+  
 
 end

@@ -1,16 +1,20 @@
 <%= render(HeaderComponent.new()) do %>
-    <% end %>
-        <!-- <div class="index">
+ <% end %>
+        <div class="index">
             <main>
 
                 <ol class="aractiles">
+                    <% @rows.each do |item| %>
+
                     <li class="item">
-                        <h2><a href="">深入浅出 http 的缓存机制</a></h2>
-                        <span class="title">通过使用 HTTP 缓存，可以减少等待时间和网络流量，那么HTTP缓存都有哪些类型，如何实现这些缓存机制呢</span>
-                    </li>
+                        <h2><a href="/post"><%= item.name %></a></h2>
+                        <span class="title">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span>
+                    </li> 
+                    <%end %>
+                   
 
                 </ol>
 
             </main>
-        </div> -->
-    <%=  raw @html %>
+        </div>
+ 

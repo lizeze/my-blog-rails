@@ -3,9 +3,11 @@ require 'redcarpet/render_strip'
 class IndexController < ApplicationController
 
     def index
-  markdown = Redcarpet::Markdown.new(Redcarpet::Render::StripDown)
-     
-       render :template =>'index' 
+      @rows = Array[]
+      bar = Bar.new
+      bar.name = 1
+      @rows << bar
+      render :template =>'index'   
     end
 
   

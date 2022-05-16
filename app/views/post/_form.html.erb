@@ -1,0 +1,26 @@
+<div class="lz-form">
+    <h1>New Article</h1>
+    <%= form_with model: post do |f| %>
+  
+   <p class="form-row">
+     <%= f.label :title %><br>
+     <%= f.text_field :title %>
+   </p>
+  
+   <p class="form-row">
+     <%= f.label :tag %><br>
+     <%= f.text_field :tag %>
+   </p>
+   <p class="form-row">
+    <%= f.label :category %><br>
+    <%= f.text_field :category %>
+  </p>
+  <p class="form-row">
+    <%= f.label :path %><br>
+    <%= f.text_field :path %>
+  </p>
+  <p  class="form-button">
+     <%= f.submit %>
+   </p>
+ <% end %>
+ </div>

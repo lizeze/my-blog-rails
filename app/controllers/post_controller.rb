@@ -8,24 +8,34 @@ class PostController < ApplicationController
          render :template=>'post/index'
     end
     def show
-
+         id=params[:id]
+         
+         @rows=Post.all
          render :template=>'post/list'
         
     end
 
     def create
-        post=  Post.new(params.permit(:tags, :title,:category,:path))
+        post=  Post.new(article_params)
         post.save
         redirect_to  action: :show
     end
 
-     def post_add
-       
-        render :template=>'post/create'
-         
-     end
+     
      def new
-        redner json:['222']
+        render :template=>'post/create'
      end
+     def destroy
+        @post = Post.find(params[:id])
+        @post.destroy
+     
+        redirect_to action: :show
+      end
+
+      private
+        def article_params
+            params.require(:post).permit(:title, :path,:tags,:category)
+            
+        end
      
 end

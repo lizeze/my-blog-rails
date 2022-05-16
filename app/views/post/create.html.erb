@@ -1,5 +1,6 @@
  
-<form accept-charset="UTF-8" action="/post" method="post" class="lz-form">
+<%= render "form", post: @post %>
+<!-- <form accept-charset="UTF-8" action="/post" method="post" class="lz-form">
     <div style="margin:0;padding:0">
       <input name="utf8" type="hidden" value="&#x2713;" />
       <input name="authenticity_token" type="hidden" value="f755bb0ed134b76c432144748a6d4b7a7ddf2b71" />
@@ -26,8 +27,8 @@
     <%= text_field_tag(:path) %>
   
  </div>
-  <div>
+  <div> -->
    
-    <%= submit_tag("提交", :id=>"button", :class=>"lz-button", :name=>"submit") %>
+    <!-- <%= submit_tag("提交", :id=>"button", :class=>"lz-button", :name=>"submit") %> -->
   </div>
   </form>

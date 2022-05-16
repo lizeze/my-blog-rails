@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get '/post',action: :index,controller:'post'
   get '/add/post', action: :post_add,controller:'post'
   get '/all/post',action: :show ,controller:'post'
-  
+ 
 
   
 end

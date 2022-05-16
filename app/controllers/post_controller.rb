@@ -1,39 +1,38 @@
 class PostController < ApplicationController
   
-    def index
-        renderer=   Redcarpet::Render::HTML.new(render_options = {})
-        markdown = Redcarpet::Markdown.new(renderer, extensions = {fenced_code_blocks: true,highlight:true})
-        content = File.read("md/我的.md")  
-        @html=  markdown.render(content)  
-         render :template=>'post/index'
-    end
-    def show
-         id=params[:id]
-         
-         @rows=Post.all
-         render :template=>'post/list'
-        
-    end
-
-    def create
-        post=  Post.new(article_params)
-        post.save
-        redirect_to  action: :show
-    end
-
-     
-     def new
-        render :template=>'post/create'
+    # def index
+    #     renderer=   Redcarpet::Render::HTML.new(render_options = {})
+    #     markdown = Redcarpet::Markdown.new(renderer, extensions = {fenced_code_blocks: true,highlight:true})
+    #     content = File.read("md/我的.md")  
+    #     @html=  markdown.render(content)  
+    #      render :template=>'post/index'
+    # end
+     def index
+        @post=Post.all
      end
-     def destroy
-        @post = Post.find(params[:id])
-        @post.destroy
-     
-        redirect_to action: :show
+     def new
+        @post=Post.new
+     end
+     def update
+       @post=Post.find(params[:id]) 
+     end
+      def create
+          
       end
-
+      def edit
+          
+      end
+      def show
+        @post = Post.find(params[:id])
+      end
+     def destroy
+        post=Post.find(params[:id])
+        post.destroy
+        redirect_to  action: 'index', status: :see_other
+     end
+   
       private
-        def article_params
+        def post_params
             params.require(:post).permit(:title, :path,:tags,:category)
             
         end

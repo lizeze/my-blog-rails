@@ -22,3 +22,11 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+def index
+        renderer=   Redcarpet::Render::HTML.new(render_options = {})
+        markdown = Redcarpet::Markdown.new(renderer, extensions = {fenced_code_blocks: true,highlight:true})
+        content = File.read("md/我的.md")  
+        @html=  markdown.render(content)  
+         render :template=>'post/index'
+    end

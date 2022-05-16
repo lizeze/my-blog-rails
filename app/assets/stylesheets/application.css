@@ -41,16 +41,23 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: row;
+  flex-direction: column;
   margin: 10px 0;
 }
 
-.lz-form .form-row label {
+.lz-form .form-row  .form-item{
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: center;
+}
+.lz-form .form-row  .form-item label {
   width: 100px;
   text-align: right;
   margin-right: 10px;
 }
-.lz-form .form-row input {
+.lz-form .form-row .form-item input,
+.lz-form .form-row  .form-item textarea {
   -webkit-appearance: none;
   background-color: #fff;
   background-image: none;
@@ -68,3 +75,7 @@ a {
   width: 100%;
 }
 
+.lz-form .form-row .errors{
+
+  color:red
+}

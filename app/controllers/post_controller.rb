@@ -1,10 +1,9 @@
 class PostController < ApplicationController
   
     def index
-        puts '22'
         renderer=   Redcarpet::Render::HTML.new(render_options = {})
         markdown = Redcarpet::Markdown.new(renderer, extensions = {fenced_code_blocks: true,highlight:true})
-        content = File.read("md/README.md")  
+        content = File.read("md/我的.md")  
         @html=  markdown.render(content)  
          render :template=>'post/index'
     end

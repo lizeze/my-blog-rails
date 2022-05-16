@@ -7,4 +7,25 @@ class PostController < ApplicationController
         @html=  markdown.render(content)  
          render :template=>'post/index'
     end
+    def show
+
+         render :template=>'post/list'
+        
+    end
+
+    def create
+        post=  Post.new(params.permit(:tags, :title,:category,:path))
+        post.save
+        redirect_to  action: :show
+    end
+
+     def post_add
+       
+        render :template=>'post/create'
+         
+     end
+     def new
+        redner json:['222']
+     end
+     
 end

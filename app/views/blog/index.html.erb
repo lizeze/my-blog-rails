@@ -1,2 +1,20 @@
-<h1>Blog#index</h1>
-<p>Find me in app/views/blog/index.html.erb</p>
+<table class="table">
+   
+    <thead>
+      <tr>
+        <th>标题</th>
+      </tr>
+    </thead>
+    <tbody>
+         <% @blogs.each do |blog| %>
+         <tr>
+            <td>
+                <%= link_to blog.title , blog_path(blog)%></td>
+           
+          
+          </tr>
+         <% end%>
+     
+      
+    </tbody>
+  </table>

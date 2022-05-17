@@ -14,7 +14,7 @@ class PostController < ApplicationController
         @post=Post.new
      end
      def update
-       puts '修改了222222222222222'
+       
         @post=Post.find(params[:id])
         if @post.update(post_params)
          redirect_to @post

@@ -1,7 +1,6 @@
 class ResumesController < ApplicationController
   def index
-    puts '2222222222222'
-    puts  Resume.all.size
+  
     @resumes = Resume.all
    
  end

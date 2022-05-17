@@ -8,12 +8,19 @@ class BlogController < ApplicationController
 
     renderer=   Redcarpet::Render::HTML.new(render_options = {})
     markdown = Redcarpet::Markdown.new(renderer, extensions = {fenced_code_blocks: true,highlight:true})
-    blog=Blog.find(params[:id])
-    puts '222222222222222222222222222222'
-    puts blog.attachment
+    # blog=Blog.find(:first,params[:id])
+    # blog=  Blog.find(:first, :conditions => [ "id = ?", params[:id]])
+
+    blog = Blog.find_by(:id => params[:id])
+
+
+    if blog
     file_path = "#{Rails.root}/public#{blog.attachment.to_s}"
     content = File.read(file_path)  
     @html=  markdown.render(content)  
+    else
+      render :template=>'blog/404'
+    end
    
   end
 

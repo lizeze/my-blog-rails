@@ -10,10 +10,7 @@ class BlogController < ApplicationController
     markdown = Redcarpet::Markdown.new(renderer, extensions = {fenced_code_blocks: true,highlight:true})
     # blog=Blog.find(:first,params[:id])
     # blog=  Blog.find(:first, :conditions => [ "id = ?", params[:id]])
-
     blog = Blog.find_by(:id => params[:id])
-
-
     if blog
     file_path = "#{Rails.root}/public#{blog.attachment.to_s}"
     content = File.read(file_path)  
@@ -36,14 +33,20 @@ class BlogController < ApplicationController
   def create
    
      @blog=Blog.new(blog_params)
-     @blog.save
+    if  @blog.save
+      # redirect_to blog_path, notice: "The resume #{@blog.name} has been uploaded."
+      # redirect_to :blog_path
+      flash.now[:notice] = "222222222222222222"
+       redirect_to @blog
+    else
+      render 'new'
+    end
   
   end
       def destroy
-        puts '2222222222222删除'
-        blog=Blog.find(params[:id])
-        blog.destroy
-        redirect_to action: 'index'
+         @blog=Blog.find(params[:id])
+        @blog.destroy
+        redirect_to action: 'index', notice:  "The resume #{@blog.title} has been deleted."
       end
    private
      def blog_params

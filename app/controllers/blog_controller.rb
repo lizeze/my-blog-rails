@@ -25,19 +25,19 @@ class BlogController < ApplicationController
   end
 
   def update
-
-   
   end
   def create
-    puts '22222222222222222222222222'
-  
+   
      @blog=Blog.new(blog_params)
      @blog.save
-
-      
+  
   end
-  def destory
-  end
+      def destroy
+        puts '2222222222222删除'
+        blog=Blog.find(params[:id])
+        blog.destroy
+        redirect_to action: 'index'
+      end
    private
      def blog_params
       params.require(:blog).permit(:title,  :attachment)

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'resumes/create'
   get 'resumes/destroy'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  resources :resumes, only: [:index, :new, :create, :destroy]
+  resources :resumes
   root "resumes#index"
   # Defines the root path route ("/")
   # root "articles#index"

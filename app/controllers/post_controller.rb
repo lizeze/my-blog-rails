@@ -14,13 +14,23 @@ class PostController < ApplicationController
         @post=Post.new
      end
      def update
-       @post=Post.find(params[:id]) 
+       puts '修改了222222222222222'
+        @post=Post.find(params[:id])
+        if @post.update(post_params)
+         redirect_to @post
+       else
+         render :edit, status: :unprocessable_entity
+       end
+
+
      end
       def create
-          
+         @post = Post.new(post_params)
+         @post.save
+         redirect_to @post
       end
       def edit
-          
+         @post=Post.find(params[:id]) 
       end
       def show
         @post = Post.find(params[:id])

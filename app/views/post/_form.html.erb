@@ -1,24 +1,32 @@
 <div class="lz-form">
-    <h1>New Article</h1>
-  <%= form_with model: article do |f| %>
  
-   <p class="form-row">
-     <%= f.label :title %><br>
-     <%= f.text_field :title %>
-   </p>
+  <%= form_with model: post  do |f| %>
+ 
+   <div class="form-row">
+    <div class="form-item">
+      <%= f.label :title %> 
+      <%= f.text_field :title %>
+    </div>
+   </div>
   
-   <p class="form-row">
-     <%= f.label :tag %><br>
+   <div class="form-row">
+    <div class="form-item">
+     <%= f.label :tag %> 
      <%= f.text_field :tag %>
-   </p>
-   <p class="form-row">
-    <%= f.label :category %><br>
+    </div>
+   </div>
+   <div class="form-row">
+    <div class="form-item">
+    <%= f.label :category %> 
     <%= f.text_field :category %>
-  </p>
-  <p class="form-row">
-    <%= f.label :path %><br>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-item">
+    <%= f.label :path %> 
     <%= f.text_field :path %>
-  </p>
+    </div>
+  </div>
   <p  class="form-button">
      <%= f.submit %>
    </p>

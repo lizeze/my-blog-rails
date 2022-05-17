@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get '/about',action: :index ,controller:'about'
   resources :articles
   resources :post
+  get '/post/new',action: :new,controller:'post'
 end

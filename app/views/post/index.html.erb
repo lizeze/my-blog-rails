@@ -1,16 +1,27 @@
 <%= render(HeaderComponent.new()) do %>
     <% end %>
+        <table class="lz-table">
+            <thead>
+                <tr>
+                    <th>标题</th>
+                    <th>标签</th>
+                    <th></th>
+                </tr>
+            </thead>
 
-        <ul class="lz-list">
-            <% @post.each do |post| %>
-                <li>
-                    <%= link_to post.title, post %>
-                </li>
+            <tbody>
+                <% @post.each do |post| %>
+                    <tr>
+                        <td>  <%= post.title%> </td>
+                        <td>  <%= post.tags%> </td>
+                        <td>
 
-                <li>
-                    <%= link_to "Destroy" , post_path(post), data: { turbo_method: :delete,
-                        turbo_confirm: "Are you sure?" } %>
-                </li>
-                <% end %>
-        </ul>
-        <%= link_to "New Post" , new_post_path %>
+                      <%= link_to "编辑", edit_post_path(post),:class=>"lz-link-button"%>
+                        </td>
+                    </tr>
+                    <% end %>
+            </tbody>
+        </table>
+
+
+        <%= link_to "New Post" , new_post_path %>..

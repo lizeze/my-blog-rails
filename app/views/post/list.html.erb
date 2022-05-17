@@ -1,28 +1,27 @@
+<h1>文章列表</h1>
+<%= link_to "New Post" , new_post_path %>
 
- <h1>文章列表</h1>
- <%= link_to "New Post", new_post_path %>
+    <%= javascript_include_tag 'post/list' %>
+        <table class="lz-table">
+            <% @rows.each do |item| %>
+                <tr>
 
-<%= javascript_include_tag 'post/list'%>
-<table class="lz-table">
-    <% @rows.each do |item| %>
-    <tr>
+                    <td>
+                        <%= item.id %>
+                    </td>
+                    <td>
+                        <%= item.title %>
+                    </td>
 
-<td>
-            <%= item.id %>
-        </td>
-        <td>
-            <%= item.title %>
-        </td>
+                    <td>
+                        <%= button_to "编辑" , post_path(item)}, method: :get %>
 
-        <td><%= button_to "编辑", post_path(item)}, method: :get %>
+                            <%= button_to "删除" , post_path(item), form: { data: { turbo_confirm: "确认删除吗?" } }, method:
+                                :delete %>
 
-            <%= button_to "删除", post_path(item), form: { data: { turbo_confirm: "确认删除吗?" } }, method: :delete %>
-           
-        </td>
-    </tr>
-    <%end %>
+                    </td>
+                </tr>
+                <%end %>
 
 
-</table>
-
- 
+        </table>

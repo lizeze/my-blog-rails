@@ -15,7 +15,7 @@
          <% @blogs.each do |blog| %>
          <tr>
             <td>
-                <%= link_to 2 ,  blog_path(2)%>
+                <%= link_to blog.title ,  blog_path(blog.title)%>
               
               
               </td>

@@ -1,7 +1,5 @@
-<% if !flash[:notice].blank? %>
-   <div class = "alert alert-info">
-      <%= flash[:notice] %>
-   </div>
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
 <% end %>
 
 <%= link_to "添加", new_blog_path, class: "btn btn-primary" %>

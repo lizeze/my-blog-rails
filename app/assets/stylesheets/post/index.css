@@ -10,6 +10,9 @@
   word-wrap: break-word;
 }
 
+.markdown-body  li{
+  list-style:disc;
+}
 .markdown-body .octicon {
   display: inline-block;
   fill: currentColor;

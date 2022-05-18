@@ -36,18 +36,19 @@ class BlogController < ApplicationController
     if  @blog.save
       # redirect_to blog_path, notice: "The resume #{@blog.name} has been uploaded."
       # redirect_to :blog_path
-      flash.now[:notice] = "222222222222222222"
+      flash[:notice] = "Post successfully created"
        redirect_to @blog
     else
       render 'new'
     end
   
   end
-      def destroy
-         @blog=Blog.find(params[:id])
-        @blog.destroy
-        redirect_to action: 'index', notice:  "The resume #{@blog.title} has been deleted."
-      end
+  def destroy
+      @blog=Blog.find(params[:id])
+      @blog.destroy
+      flash.now[:notice]== "We have exactly   books available."
+      redirect_to action: 'index'
+  end
    private
      def blog_params
       params.require(:blog).permit(:title,  :attachment)

@@ -1,0 +1,10 @@
+article h1{
+
+    margin: 40px 0px;
+}
+
+article  .blog_time{
+    color: rgba(0,0,0,.5);
+    margin-bottom: 20px;
+    display: block;
+}

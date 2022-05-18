@@ -1,7 +1,18 @@
 <% if flash[:notice] %>
-  <div class="notice"><%= flash[:notice] %></div>
-<% end %>
-<% content_for :title, @title %>
+  <div class="notice">
+    <%= flash[:notice] %>
+  </div>
+  <% end %>
+    <% content_for :title, @blog.title %>
+      <article>
 
-<div class="markdown-body">
-<%= raw  @html%></div>
+        <h1>
+          <%= @blog.title%>
+        </h1>
+   <span class="blog_time">发布于 <%=   @blog.created_at.localtime%></span>
+
+        <div class="markdown-body">
+          <%= raw @html%>
+        </div>
+
+      </article>

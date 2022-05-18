@@ -15,7 +15,7 @@ class BlogController < ApplicationController
     file_path = "#{Rails.root}/public#{blog.attachment.to_s}"
     content = File.read(file_path)  
     @html=  markdown.render(content)
-    @title=blog[:title]
+    @blog=blog
     else
       render :template=>'blog/404'
     end

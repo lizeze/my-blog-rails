@@ -1,9 +1,4 @@
----
-title: js数组方法整理
-tags: JavaScript
-abbrlink: 5570a359
-date: 2021-09-29 15:16:06
----
+ 
 # 创建数组
 ```javascript
 

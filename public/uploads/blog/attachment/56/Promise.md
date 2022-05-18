@@ -1,9 +1,4 @@
----
-title: Promise知识整理
-abbrlink: ce0623bf
-date: 2021-09-26 14:07:31
-tags: JavaScript
----
+ 
 
  # Promise 的含义
 

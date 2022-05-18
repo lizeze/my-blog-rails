@@ -37,7 +37,7 @@ class BlogController < ApplicationController
       # redirect_to blog_path, notice: "The resume #{@blog.name} has been uploaded."
       # redirect_to :blog_path
       flash[:notice] = "Post successfully created"
-       redirect_to @blog
+       redirect_to  action: 'index'
     else
       render 'new'
     end
@@ -46,7 +46,8 @@ class BlogController < ApplicationController
   def destroy
       @blog=Blog.find(params[:id])
       @blog.destroy
-      flash.now[:notice]== "We have exactly   books available."
+      # flash.now[:error] = "Could not save client" 
+      flash[:notice] = "删除数据成功！"   
       redirect_to action: 'index'
   end
    private

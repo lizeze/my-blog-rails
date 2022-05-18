@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%=h yield(:title) %></title>
+    <% if @title %>
+    <title><%=h yield(:title) %> | xx小台灯</title>
+
+    <% else %>
+    <title>xx996</title>
+     <% end %>
+   
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>

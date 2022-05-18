@@ -10,7 +10,7 @@ class BlogController < ApplicationController
     markdown = Redcarpet::Markdown.new(renderer, extensions = {fenced_code_blocks: true,highlight:true})
     # blog=Blog.find(:first,params[:id])
     # blog=  Blog.find(:first, :conditions => [ "id = ?", params[:id]])
-    blog = Blog.find_by(:id => params[:id])
+    blog = Blog.find_by(:title => params[:id])
     if blog
     file_path = "#{Rails.root}/public#{blog.attachment.to_s}"
     content = File.read(file_path)  

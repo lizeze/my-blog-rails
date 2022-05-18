@@ -8,21 +8,19 @@ class BlogController < ApplicationController
 
     renderer=   Redcarpet::Render::HTML.new(render_options = {})
     markdown = Redcarpet::Markdown.new(renderer, extensions = {fenced_code_blocks: true,highlight:true})
-    # blog=Blog.find(:first,params[:id])
-    # blog=  Blog.find(:first, :conditions => [ "id = ?", params[:id]])
+  
     blog = Blog.find_by(:title => params[:id])
     if blog
-    file_path = "#{Rails.root}/public#{blog.attachment.to_s}"
-    exist= File.exist?(file_path)
-    puts '2222222222222222'
-    puts exist
-    if exist
-    content = File.read(file_path)  
-    @html=  markdown.render(content)
-    @blog=blog
-    else
-      render :template=>'blog/404'
-    end
+      file_path = "#{Rails.root}/public#{blog.attachment.to_s}"
+      exist= File.exist?(file_path)
+      if exist
+        content = File.read(file_path)  
+        @html=  markdown.render(content)
+        @title=blog[:title]
+        @blog=blog
+      else
+         render :template=>'blog/404'
+       end
     else
       render :template=>'blog/404'
     end
@@ -47,7 +45,8 @@ class BlogController < ApplicationController
       flash[:notice] = "Post successfully created"
        redirect_to  action: 'index'
     else
-      render 'new'
+    
+      render :new, status: :unprocessable_entity
     end
   
   end

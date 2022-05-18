@@ -4,6 +4,10 @@
     <%= flash[:notice] %>
   </div>
   <% end %>
+  
+  <%= render(HeaderComponent.new()) do %> 
+  <% end %>
+
     <% content_for :title, @blog.title %>
       <article>
 
@@ -16,4 +20,4 @@
           <%= raw @html%>
         </div>
 
-      </article>
+      </article> 

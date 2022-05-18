@@ -21,12 +21,8 @@
     <div class="form-group">
         <%= form.label :tags,'标签',:class=> "col-sm-2 control-label"  %>
             <div class="col-sm-10">
-                <%= form.text_field :tags , :autocomplete=>'off',:class=>'form-control', :list=>'blog_tags_list'  %>
-                    <datalist id="blog_tags_list">
-                        <option value="Chocolate">
-                        <option value="Chocolate1">
-                        <option value="Chocolate2">
-                    </datalist>
+                <%= form.text_field :tags , :autocomplete=>'off',:class=>'form-control' %>
+                <span class="label label-info">信息标签</span>
             </div>
     </div>
     <div class="form-group upload">

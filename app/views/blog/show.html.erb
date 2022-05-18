@@ -1,5 +1,7 @@
 <% if flash[:notice] %>
   <div class="notice"><%= flash[:notice] %></div>
 <% end %>
+<% content_for :title, @title %>
+
 <div class="markdown-body">
 <%= raw  @html%></div>

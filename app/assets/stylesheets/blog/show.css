@@ -9,7 +9,11 @@ article  .blog_time{
     display: block;
 }
 
- 
+ article {
+   margin-bottom: 100px;
+ } 
+
+
 
 @media (prefers-color-scheme: dark) {
   .markdown-body {

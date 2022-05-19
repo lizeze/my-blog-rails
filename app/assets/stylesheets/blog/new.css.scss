@@ -1,5 +1,20 @@
-.upload{
- display: flex;
- align-items: center;
-justify-content: center;
+.upload {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+.tags-container {
+  position: relative;
+}
+
+.tags-container .content {
+  position: absolute;
+  top: 40px;
+  z-index: 5;
+  background: #fff;
+ 
+  border: 1px solid #e3e3e3;
+  padding: 10px 15px;
+}
+
+ 

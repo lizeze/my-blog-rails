@@ -1,23 +1,27 @@
 <% stylesheet_link_tag "blog/show" %>
-<% if flash[:notice] %>
-  <div class="notice">
-    <%= flash[:notice] %>
-  </div>
-  <% end %>
-  
-  <%= render(HeaderComponent.new()) do %> 
-  <% end %>
+  <% if flash[:notice] %>
+    <div class="notice">
+      <%= flash[:notice] %>
+    </div>
+    <% end %>
 
-    <% content_for :title, @blog.title %>
-      <article>
+      <%= render(HeaderComponent.new()) do %>
+        <% end %>
 
-        <h1>
-          <%= @blog.title%>
-        </h1>
-   <span class="blog_time">发布于 <%=   @blog.created_at.localtime%></span>
+          <% content_for :title, @blog.title %>
+            <article>
 
-        <div class="markdown-body">
-          <%= raw @html%>
-        </div>
+              <h1>
+                <%= @blog.title%>
+              </h1>
 
-      </article> 
+              
+              <span class="blog_time">发布于 <%= @blog.created_at.localtime%></span>
+
+             
+
+              <div class="markdown-body">
+                <%= raw @html%>
+              </div>
+
+            </article>

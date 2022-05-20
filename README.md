@@ -43,3 +43,10 @@ docker run -d      --name db-for-blog      -e POSTGRES_USER=blog    -e POSTGRES_
 git config --global core.autocrlf true
 rails app:update:bin
 ```
+
+# 增加字段
+
+```
+rails g migration addColumnToBlogs describe:string
+rails db:migrate
+```

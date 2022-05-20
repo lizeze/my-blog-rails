@@ -30,3 +30,16 @@ def index
         @html=  markdown.render(content)  
          render :template=>'post/index'
     end
+
+
+# 初始化数据库
+```
+docker run -d      --name db-for-blog      -e POSTGRES_USER=blog    -e POSTGRES_PASSWORD=123456      -e POSTGRES_DB=my_blog_rails_development     -e PGDATA=/var/lib/postgresql/data/pgdata      -v my-blog-data:/var/lib/postgresql/data      --network=network1    --restart=always   postgres:14
+```
+
+# 解决启动异常
+
+```
+git config --global core.autocrlf true
+rails app:update:bin
+```
